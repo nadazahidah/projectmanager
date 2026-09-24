@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nadaa Zahidah — Project Manager × KOL Campaign Specialist</title>
+<meta name="description" content="Portfolio of Nadaa Zahidah — Project Manager and KOL Campaign Specialist.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+:root{
+  --cream:#f4f0e8; --paper:#faf8f3; --ink:#171717; --muted:#77736c; --line:#d6d0c5;
+  --burgundy:#811746; --burgundy-dark:#5d1032; --yellow:#e8d68b; --blue:#c8dce1; --green:#cbd8c4; --white:#fff;
+  --sans:"DM Sans",sans-serif; --mono:"DM Mono",monospace; --serif:"Playfair Display",serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{margin:0; padding:0; box-sizing:inherit;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream); color:var(--ink); font-family:var(--sans); line-height:1.5; overflow-x:hidden;}
+a{color:inherit; text-decoration:none;}
+img,video{display:block; width:100%;}
+button{font-family:inherit;}
+.container{width:min(1400px,90vw); margin:auto;}
+.mono{font-family:var(--mono);}
+body::before{content:""; position:fixed; inset:0;
+  background-image:linear-gradient(rgba(23,23,23,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(23,23,23,.035) 1px,transparent 1px);
+  background-size:40px 40px; pointer-events:none; z-index:-2;}
+.nav{position:fixed; top:0; left:0; width:100%; height:72px; display:flex; justify-content:space-between; align-items:center;
+  padding:env(safe-area-inset-top,0px) 5vw 0; background:rgba(244,240,232,.88); backdrop-filter:blur(14px); border-bottom:1px solid var(--line); z-index:100;}
+.nav-logo{font-size:14px; font-weight:700; letter-spacing:-.02em;}
+.nav-logo span{color:var(--burgundy);}
+.nav-menu{display:flex; gap:28px; font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.08em;}
+.nav-menu a{position:relative;}
+.nav-menu a::after{content:""; position:absolute; left:0; bottom:-5px; width:0; height:1px; background:var(--burgundy); transition:.3s;}
+.nav-menu a:hover::after{width:100%;}
+.ticker{margin-top:72px; overflow:hidden; background:var(--burgundy); color:var(--white); border-bottom:1px solid var(--ink);}
+.ticker-track{width:max-content; display:flex; gap:50px; padding:10px 0; animation:ticker 24s linear infinite;}
+.ticker-item{font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.12em; white-space:nowrap;}
+.ticker-item::after{content:"✦"; margin-left:50px;}
+@keyframes ticker{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+.hero{min-height:calc(100vh - 110px); display:flex; align-items:center; padding:90px 0 80px; position:relative;}
+.hero-layout{display:grid; grid-template-columns:minmax(0,1.3fr) minmax(300px,.7fr); gap:80px; align-items:center;}
+.hero-kicker{font-family:var(--mono); font-size:11px; margin-bottom:28px; text-transform:uppercase; letter-spacing:.1em;}
+.hero-kicker::before{content:"●"; color:var(--burgundy); margin-right:8px;}
+.hero-title{font-size:clamp(60px,10vw,150px); line-height:.78; letter-spacing:-.08em; font-weight:700;}
+.hero-title em{font-family:var(--serif); font-weight:500;}
+.hero-title .accent{color:var(--burgundy);}
+.hero-description{max-width:560px; margin-top:45px; font-size:18px;}
+.hero-description strong{color:var(--burgundy);}
+.hero-meta{margin-top:40px; display:flex; flex-wrap:wrap; gap:8px;}
+.pill{border:1px solid var(--ink); padding:8px 13px; border-radius:100px; font-family:var(--mono); font-size:9px; text-transform:uppercase;}
+.hero-graphic{position:relative; min-height:500px;}
+.graphic-card{position:absolute; background:var(--paper); border:1px solid var(--ink); box-shadow:7px 8px 0 var(--ink);}
+.card-main{width:300px; right:30px; top:40px; transform:rotate(3deg); padding:22px;}
+.card-main-header{display:flex; justify-content:space-between; font-family:var(--mono); font-size:9px; margin-bottom:25px;}
+.status{display:inline-flex; align-items:center; gap:6px; color:#276d38;}
+.status::before{content:""; width:7px; height:7px; background:#3c9c52; border-radius:50%;}
+.pipeline-step{display:flex; align-items:center; gap:12px; padding:11px 0; border-bottom:1px dashed var(--line); font-size:13px;}
+.pipeline-step:last-child{border-bottom:none;}
+.pipeline-number{width:23px; height:23px; display:grid; place-items:center; border:1px solid var(--ink); border-radius:50%; font-family:var(--mono); font-size:9px;}
+.card-note{width:190px; left:0; bottom:50px; padding:22px; background:var(--yellow); transform:rotate(-7deg);}
+.card-note::before{content:""; position:absolute; top:-9px; left:45%; width:60px; height:18px; background:rgba(255,255,255,.55); transform:rotate(3deg);}
+.card-note p{font-family:var(--serif); font-size:21px; line-height:1.1;}
+.card-note small{display:block; margin-top:20px; font-family:var(--mono); font-size:8px;}
+.arrow{position:absolute; font-family:var(--serif); font-style:italic; color:var(--burgundy); font-size:25px;}
+.arrow.one{top:5px; right:0; transform:rotate(-8deg);}
+.arrow.two{bottom:0; left:180px; transform:rotate(8deg);}
+.brands{background:var(--paper); border-bottom:1px solid var(--line); overflow:hidden; padding:28px 0;}
+.brands-track{width:max-content; display:flex; align-items:center; gap:60px; animation:brandmove 34s linear infinite;}
+.brand-item{font-family:var(--mono); font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); white-space:nowrap; display:flex; align-items:center; gap:60px;}
+.brand-item::after{content:"•"; color:var(--burgundy);}
+.brand-item img{height:32px; width:auto; display:block; filter:grayscale(1); opacity:.75; transition:.2s;}
+.brand-item img:hover{filter:none; opacity:1;}
+@keyframes brandmove{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+section{padding:130px 0; position:relative;}
+.section-index{font-family:var(--mono); font-size:10px; color:var(--burgundy); margin-bottom:25px;}
+.section-heading{font-size:clamp(44px,7vw,96px); line-height:.85; letter-spacing:-.07em; max-width:900px;}
+.section-heading em{font-family:var(--serif); font-weight:500;}
+.proof{background:var(--ink); color:var(--white); overflow:hidden;}
+.proof-grid{display:grid; grid-template-columns:repeat(4,1fr); margin-top:80px; border-top:1px solid #454545;}
+.proof-item{padding:35px 25px; border-right:1px solid #454545;}
+.proof-item:first-child{padding-left:0;}
+.proof-number{font-size:58px; letter-spacing:-.06em; line-height:1;}
+.proof-label{margin-top:12px; color:#aaa; font-family:var(--mono); font-size:9px; text-transform:uppercase;}
+.skills-layout{margin-top:80px; display:grid; grid-template-columns:.8fr 1.2fr; gap:80px;}
+.skills-intro{max-width:450px;}
+.skills-intro p{margin-top:25px; color:var(--muted); font-size:16px;}
+.skill-grid{display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--ink); border-left:1px solid var(--ink);}
+.skill{min-height:150px; padding:22px; border-right:1px solid var(--ink); border-bottom:1px solid var(--ink); position:relative; transition:.25s;}
+.skill:hover{background:var(--burgundy); color:var(--white); transform:translate(-5px,-5px);}
+.skill-number{font-family:var(--mono); font-size:9px; color:var(--burgundy);}
+.skill:hover .skill-number{color:var(--yellow);}
+.skill-name{position:absolute; bottom:20px; left:22px; font-size:18px; letter-spacing:-.03em;}
+.campaign-list{margin-top:80px;}
+.campaign{display:grid; grid-template-columns:60px 1fr 260px; gap:35px; padding:35px 0 60px; border-top:1px solid var(--line); position:relative;}
+.campaign-number{font-family:var(--mono); font-size:10px; color:var(--burgundy);}
+.campaign-main h3{font-size:clamp(36px,5vw,72px); line-height:.9; letter-spacing:-.06em;}
+.campaign-tag{display:inline-block; margin-top:15px; padding:6px 10px; border:1px solid var(--ink); border-radius:100px; font-family:var(--mono); font-size:8px; text-transform:uppercase;}
+.campaign-description{max-width:600px; margin-top:25px; color:var(--muted); font-size:15px;}
+.campaign-side{font-family:var(--mono); font-size:9px; line-height:1.8; color:var(--muted);}
+.campaign-side strong{color:var(--ink);}
+.campaign-visual{grid-column:2/4; margin-top:15px; display:grid; grid-template-columns:1.35fr .65fr; gap:15px;}
+.visual-main{min-height:460px; background:#ddd; border:1px solid var(--ink); overflow:hidden; position:relative;}
+.visual-main img,.visual-main video{width:100%; height:100%; object-fit:cover;}
+.visual-label{position:absolute; left:15px; top:15px; padding:7px 10px; background:var(--paper); border:1px solid var(--ink); font-family:var(--mono); font-size:8px; z-index:2;}
+.visual-side{display:grid; grid-template-rows:1fr 1fr; gap:15px;}
+.visual-side-item{border:1px solid var(--ink); overflow:hidden; background:#ddd;}
+.visual-side-item img{width:100%; height:100%; object-fit:cover;}
+.case-study{background:var(--blue);}
+.case-layout{margin-top:80px; display:grid; grid-template-columns:1fr 1fr; gap:80px;}
+.case-card{background:var(--paper); border:1px solid var(--ink); padding:35px; box-shadow:8px 8px 0 var(--ink);}
+.case-card h3{font-size:26px; letter-spacing:-.04em; margin-bottom:30px;}
+.case-step{display:grid; grid-template-columns:35px 1fr; gap:15px; padding:18px 0; border-bottom:1px dashed var(--line);}
+.case-step:last-child{border-bottom:none;}
+.case-step-number{width:28px; height:28px; display:grid; place-items:center; border:1px solid var(--ink); border-radius:50%; font-family:var(--mono); font-size:9px;}
+.case-step h4{font-size:15px;}
+.case-step p{margin-top:4px; color:var(--muted); font-size:13px;}
+.content-proof{background:var(--paper);}
+.content-grid{margin-top:80px; display:grid; grid-template-columns:repeat(3,1fr); gap:25px;}
+.content-frame{aspect-ratio:9/12; background:#ddd; border:1px solid var(--ink); overflow:hidden; position:relative;}
+.content-frame img,.content-frame video{width:100%; height:100%; object-fit:cover;}
+.content-number{position:absolute; top:12px; left:12px; z-index:2; padding:5px 8px; background:var(--yellow); border:1px solid var(--ink); font-family:var(--mono); font-size:8px;}
+.content-info{padding:15px 0; display:flex; justify-content:space-between; gap:15px; border-bottom:1px solid var(--line);}
+.content-info h3{font-size:16px;}
+.content-info span{font-family:var(--mono); font-size:8px; color:var(--muted); text-align:right;}
+.content-link{display:inline-block; margin-top:10px; font-family:var(--mono); font-size:9px; text-decoration:underline;}
+.proof-wall{background:var(--yellow); overflow:hidden;}
+.wall-grid{margin-top:80px; display:grid; grid-template-columns:repeat(12,1fr); gap:20px; position:relative;}
+.proof-image{border:1px solid var(--ink); background:var(--paper); overflow:hidden;}
+.proof-image img{width:100%; height:100%; object-fit:cover;}
+.proof-a{grid-column:1/6; height:340px; transform:rotate(-2deg);}
+.proof-b{grid-column:7/13; height:290px; transform:rotate(2deg);}
+.proof-c{grid-column:3/9; height:370px; margin-top:-40px; transform:rotate(-1deg); z-index:2;}
+.proof-note{grid-column:9/13; align-self:center; padding:30px; font-family:var(--serif); font-size:28px; line-height:1.1; transform:rotate(5deg);}
+.proof-note small{display:block; margin-top:20px; font-family:var(--mono); font-size:8px;}
+.experience{background:var(--ink); color:var(--white);}
+.experience .section-index{color:var(--yellow);}
+.experience-grid{margin-top:80px;}
+.experience-row{display:grid; grid-template-columns:160px 1fr 200px; gap:40px; padding:30px 0; border-top:1px solid #444;}
+.experience-date{font-family:var(--mono); font-size:9px; color:#999;}
+.experience-role{font-size:26px; letter-spacing:-.04em;}
+.experience-description{margin-top:10px; max-width:650px; color:#aaa; font-size:14px;}
+.experience-company{font-family:var(--mono); font-size:9px; color:#aaa; text-align:right; text-transform:uppercase;}
+.contact{min-height:85vh; display:flex; align-items:center; background:var(--cream); overflow:hidden;}
+.contact-layout{position:relative;}
+.contact-title{font-size:clamp(64px,12vw,168px); line-height:.75; letter-spacing:-.09em;}
+.contact-title em{font-family:var(--serif); font-weight:500;}
+.contact-title span{color:var(--burgundy);}
+.contact-note{position:absolute; right:5%; top:25%; width:220px; padding:25px; background:var(--yellow); border:1px solid var(--ink); transform:rotate(5deg); box-shadow:6px 6px 0 var(--ink);}
+.contact-note p{font-family:var(--serif); font-size:20px; line-height:1.1;}
+.contact-note small{display:block; margin-top:20px; font-family:var(--mono); font-size:8px;}
+.contact-bottom{margin-top:90px; padding-top:20px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:end; flex-wrap:wrap; gap:20px;}
+.contact-email{font-size:20px; border-bottom:2px solid var(--burgundy);}
+.contact-links{display:flex; gap:25px; font-family:var(--mono); font-size:9px; text-transform:uppercase;}
+footer{padding:25px 5vw calc(25px + env(safe-area-inset-bottom,0px)); background:var(--burgundy); color:var(--white); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-family:var(--mono); font-size:8px; text-transform:uppercase; letter-spacing:.08em;}
+@media(max-width:950px){
+  .nav-menu{display:none;}
+  .hero-layout{grid-template-columns:1fr;}
+  .hero-graphic{min-height:430px;}
+  .proof-grid{grid-template-columns:repeat(2,1fr);}
+  .proof-item{border-bottom:1px solid #454545;}
+  .skills-layout{grid-template-columns:1fr;}
+  .campaign{grid-template-columns:45px 1fr;}
+  .campaign-side{grid-column:2;}
+  .campaign-visual{grid-column:2;}
+  .case-layout{grid-template-columns:1fr;}
+  .experience-row{grid-template-columns:130px 1fr;}
+  .experience-company{grid-column:2; text-align:left;}
+  .contact-note{position:relative; right:auto; top:auto; margin:70px 0 0 auto;}
+}
+@media(max-width:650px){
+  section{padding:90px 0;}
+  .container{width:88vw;}
+  .hero{padding-top:70px;}
+  .hero-title{font-size:19vw;}
+  .card-main{width:260px; right:0;}
+  .card-note{width:170px;}
+  .proof-number{font-size:38px;}
+  .skill-grid{grid-template-columns:1fr 1fr;}
+  .campaign{grid-template-columns:35px 1fr; gap:15px;}
+  .campaign-main h3{font-size:44px;}
+  .campaign-visual{grid-column:2; grid-template-columns:1fr;}
+  .visual-side{grid-template-columns:1fr 1fr; grid-template-rows:180px;}
+  .content-grid{grid-template-columns:1fr 1fr; gap:15px;}
+  .content-card:first-child{grid-column:span 2;}
+  .wall-grid{grid-template-columns:1fr;}
+  .proof-a,.proof-b,.proof-c,.proof-note{grid-column:1; margin:0;}
+  .proof-a{height:260px;} .proof-b{height:230px;} .proof-c{height:280px;}
+  .experience-row{grid-template-columns:1fr; gap:10px;}
+  .experience-company{grid-column:1; text-align:left;}
+  .contact-title{font-size:20vw;}
+  .contact-bottom{flex-direction:column; align-items:flex-start; gap:24px;}
+  footer{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#top" class="nav-logo">NADAA<span>.</span></a>
+  <div class="nav-menu">
+    <a href="#work">Work</a><a href="#capabilities">Capabilities</a><a href="#proof">Proof</a>
+    <a href="#experience">Experience</a><a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="ticker"><div class="ticker-track">
+  <div class="ticker-item">Brief</div><div class="ticker-item">Align</div><div class="ticker-item">Coordinate</div>
+  <div class="ticker-item">Create</div><div class="ticker-item">Review</div><div class="ticker-item">Retake</div>
+  <div class="ticker-item">Approve</div><div class="ticker-item">Launch</div>
+  <div class="ticker-item">Brief</div><div class="ticker-item">Align</div><div class="ticker-item">Coordinate</div>
+  <div class="ticker-item">Create</div><div class="ticker-item">Review</div><div class="ticker-item">Launch</div>
+</div></div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-layout">
+      <div>
+        <div class="hero-kicker">Project Manager × KOL Campaign Specialist</div>
+        <!-- EDIT: headline -->
+        <h1 class="hero-title">I MAKE<br><em>campaigns</em><br><span class="accent">move.</span></h1>
+        <!-- EDIT: deskripsi singkat -->
+        <p class="hero-description">Kerjaanku ada di antara <strong>ide kreatif, orang, timeline, dan eksekusi</strong> — mengubah brief campaign jadi konten yang beneran tayang.</p>
+        <div class="hero-meta">
+          <div class="pill">Project Management</div><div class="pill">KOL Campaign</div>
+          <div class="pill">Creative Coordination</div><div class="pill">Content Production</div>
+        </div>
+      </div>
+      <div class="hero-graphic">
+        <div class="arrow one">that's the job ↗</div>
+        <div class="graphic-card card-main">
+          <div class="card-main-header"><span>CAMPAIGN_001</span><span class="status">LIVE</span></div>
+          <div class="pipeline">
+            <div class="pipeline-step"><div class="pipeline-number">01</div>Brief</div>
+            <div class="pipeline-step"><div class="pipeline-number">02</div>KOL</div>
+            <div class="pipeline-step"><div class="pipeline-number">03</div>Storyline</div>
+            <div class="pipeline-step"><div class="pipeline-number">04</div>Production</div>
+            <div class="pipeline-step"><div class="pipeline-number">05</div>Approval</div>
+            <div class="pipeline-step"><div class="pipeline-number">06</div>LIVE</div>
+          </div>
+        </div>
+        <div class="graphic-card card-note">
+          <!-- EDIT: catatan pendek -->
+          <p>Ide bagus itu penting. Tapi yang bikin beda: benar-benar sampai tayang.</p>
+          <small>— campaign desk note</small>
+        </div>
+        <div class="arrow two">↓ keep things moving</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<div class="brands"><div class="brands-track">
+  <!-- EDIT: taruh file logo di folder assets/ dengan nama file persis seperti di bawah -->
+  <div class="brand-item"><img src="assets/dermaangel.jpg" alt="Dermaangel"></div>
+  <div class="brand-item"><img src="assets/nourish-skin.jpg" alt="Nourish Skin"></div>
+  <div class="brand-item"><img src="assets/my-baby.jpg" alt="My Baby"></div>
+  <div class="brand-item"><img src="assets/holika-holika.jpg" alt="Holika Holika"></div>
+  <div class="brand-item"><img src="assets/npure.jpg" alt="Npure"></div>
+  <div class="brand-item"><img src="assets/kka-kong.jpg" alt="Kka Kong"></div>
+  <div class="brand-item"><img src="assets/marina.jpg" alt="Marina"></div>
+  <div class="brand-item"><img src="assets/fino.jpg" alt="Fino"></div>
+  <div class="brand-item"><img src="assets/lucido-l.jpg" alt="Lucido-L"></div>
+  <div class="brand-item"><img src="assets/dpe-lab.jpg" alt="DPE Lab"></div>
+  <div class="brand-item"><img src="assets/celimax.jpg" alt="Celimax"></div>
+  <div class="brand-item"><img src="assets/blackmores.jpg" alt="Blackmores"></div>
+  <div class="brand-item"><img src="assets/vt-cosmetic.jpg" alt="VT Cosmetic"></div>
+  <div class="brand-item"><img src="assets/gemistry.jpg" alt="Gemistry"></div>
+  <div class="brand-item"><img src="assets/natur-e.jpg" alt="Natur-E"></div>
+  <div class="brand-item"><img src="assets/dermaangel.jpg" alt="Dermaangel"></div>
+  <div class="brand-item"><img src="assets/nourish-skin.jpg" alt="Nourish Skin"></div>
+  <div class="brand-item"><img src="assets/my-baby.jpg" alt="My Baby"></div>
+  <div class="brand-item"><img src="assets/holika-holika.jpg" alt="Holika Holika"></div>
+  <div class="brand-item"><img src="assets/npure.jpg" alt="Npure"></div>
+  <div class="brand-item"><img src="assets/kka-kong.jpg" alt="Kka Kong"></div>
+  <div class="brand-item"><img src="assets/marina.jpg" alt="Marina"></div>
+  <div class="brand-item"><img src="assets/fino.jpg" alt="Fino"></div>
+  <div class="brand-item"><img src="assets/lucido-l.jpg" alt="Lucido-L"></div>
+  <div class="brand-item"><img src="assets/dpe-lab.jpg" alt="DPE Lab"></div>
+  <div class="brand-item"><img src="assets/celimax.jpg" alt="Celimax"></div>
+  <div class="brand-item"><img src="assets/blackmores.jpg" alt="Blackmores"></div>
+  <div class="brand-item"><img src="assets/vt-cosmetic.jpg" alt="VT Cosmetic"></div>
+  <div class="brand-item"><img src="assets/gemistry.jpg" alt="Gemistry"></div>
+  <div class="brand-item"><img src="assets/natur-e.jpg" alt="Natur-E"></div>
+</div></div>
+
+<!-- PROOF -->
+<section class="proof" id="proof">
+  <div class="container">
+    <div class="section-index">01 / PROOF</div>
+    <h2 class="section-heading">Less <em>"I can."</em><br>More <em>"here's what I did."</em></h2>
+    <div class="proof-grid">
+      <!-- EDIT: angka & label sesuaikan data asli -->
+      <div class="proof-item"><div class="proof-number">10+</div><div class="proof-label">Campaign & brand digarap</div></div>
+      <div class="proof-item"><div class="proof-number">50+</div><div class="proof-label">KOL / kreator dikoordinasikan</div></div>
+      <div class="proof-item"><div class="proof-number">04+</div><div class="proof-label">Kategori campaign</div></div>
+      <div class="proof-item"><div class="proof-number">∞</div><div class="proof-label">Follow-up terkirim</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+  <div class="container">
+    <div class="section-index">02 / WHAT I ACTUALLY DO</div>
+    <div class="skills-layout">
+      <div class="skills-intro">
+        <h2 class="section-heading">The <em>moving parts.</em></h2>
+        <p>Campaign management jarang cuma satu kerjaan besar. Biasanya banyak hal kecil yang harus jalan di waktu yang tepat.</p>
+      </div>
+      <div class="skill-grid">
+        <div class="skill"><div class="skill-number">01</div><div class="skill-name">KOL Sourcing</div></div>
+        <div class="skill"><div class="skill-number">02</div><div class="skill-name">Briefing</div></div>
+        <div class="skill"><div class="skill-number">03</div><div class="skill-name">Timeline</div></div>
+        <div class="skill"><div class="skill-number">04</div><div class="skill-name">Storyline</div></div>
+        <div class="skill"><div class="skill-number">05</div><div class="skill-name">KOL Follow-up</div></div>
+        <div class="skill"><div class="skill-number">06</div><div class="skill-name">Client Alignment</div></div>
+        <div class="skill"><div class="skill-number">07</div><div class="skill-name">Content Review</div></div>
+        <div class="skill"><div class="skill-number">08</div><div class="skill-name">Retake</div></div>
+        <div class="skill"><div class="skill-number">09</div><div class="skill-name">Approval</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED WORK -->
+<section id="work">
+  <div class="container">
+    <div class="section-index">03 / SELECTED CAMPAIGNS</div>
+    <h2 class="section-heading">Things I've <em>helped move.</em></h2>
+    <div class="campaign-list">
+
+      <article class="campaign">
+        <div class="campaign-number">01</div>
+        <div class="campaign-main">
+          <h3>CELIMAX</h3>
+          <span class="campaign-tag">Skincare / KOL Campaign</span>
+          <!-- EDIT: deskripsi campaign -->
+          <p class="campaign-description">Eksekusi campaign meliputi koordinasi KOL, komunikasi, arahan konten, timeline, dan alignment dengan client.</p>
+        </div>
+        <div class="campaign-side">
+          <strong>ROLE</strong><br>Project Manager<br>KOL Campaign<br><br>
+          <strong>DELIVERABLE</strong><br>TikTok Video<br>YC<br>Boost Code 30 Days
+        </div>
+        <div class="campaign-visual">
+          <div class="visual-main">
+            <div class="visual-label">ACTUAL CAMPAIGN CONTENT</div>
+            <!-- EDIT: ganti src dengan file kamu di folder assets/ -->
+            <img src="assets/celimax-main.jpg" alt="Celimax campaign content">
+          </div>
+          <div class="visual-side">
+            <div class="visual-side-item"><img src="assets/celimax-kol-01.jpg" alt="Celimax KOL content"></div>
+            <div class="visual-side-item"><img src="assets/celimax-kol-02.jpg" alt="Celimax KOL content"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="campaign">
+        <div class="campaign-number">02</div>
+        <div class="campaign-main">
+          <h3>GEMISTRY</h3>
+          <span class="campaign-tag">Skincare / Content Strategy</span>
+          <p class="campaign-description">Menerjemahkan positioning produk jadi storytelling yang natural buat kreator, tanpa kehilangan pesan strategis campaign.</p>
+        </div>
+        <div class="campaign-side">
+          <strong>ROLE</strong><br>Project Manager<br>Content Direction<br><br>
+          <strong>KEY MESSAGE</strong><br>Slow Aging<br>Start Early, Age Better<br>Skincare sesuai usia
+        </div>
+        <div class="campaign-visual">
+          <div class="visual-main">
+            <div class="visual-label">CONTENT PREVIEW</div>
+            <video controls poster="assets/gemistry-poster.jpg"><source src="assets/gemistry-video.mp4" type="video/mp4"></video>
+          </div>
+          <div class="visual-side">
+            <div class="visual-side-item"><img src="assets/gemistry-01.jpg" alt="Gemistry campaign"></div>
+            <div class="visual-side-item"><img src="assets/gemistry-02.jpg" alt="Gemistry campaign"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="campaign">
+        <div class="campaign-number">03</div>
+        <div class="campaign-main">
+          <h3>BLACKMORES</h3>
+          <span class="campaign-tag">Wellness / Doctor KOL</span>
+          <!-- EDIT: cek ulang nama brand & deskripsi ini sesuai project asli kamu -->
+          <p class="campaign-description">Koordinasi konten dokter, di mana akurasi edukasi, pesan brand, storyline, dan feedback client harus tetap selaras.</p>
+        </div>
+        <div class="campaign-side">
+          <strong>ROLE</strong><br>Project Manager<br>KOL Coordination<br><br>
+          <strong>CONTENT</strong><br>Vitamin D<br>Skin Health<br>Photoaging<br>Acne / Anti-aging
+        </div>
+        <div class="campaign-visual">
+          <div class="visual-main">
+            <div class="visual-label">DOCTOR KOL CONTENT</div>
+            <img src="assets/blackmores-main.jpg" alt="Blackmores doctor campaign">
+          </div>
+          <div class="visual-side">
+            <div class="visual-side-item"><img src="assets/blackmores-doctor.jpg" alt="Doctor content"></div>
+            <div class="visual-side-item"><img src="assets/blackmores-product.jpg" alt="Blackmores product"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="campaign">
+        <div class="campaign-number">04</div>
+        <div class="campaign-main">
+          <h3>DERMA ANGEL</h3>
+          <span class="campaign-tag">Beauty / Creator Campaign</span>
+          <p class="campaign-description">Koordinasi campaign dari komunikasi awal ke kreator sampai deliverable dan eksekusi selesai.</p>
+        </div>
+        <div class="campaign-side">
+          <strong>ROLE</strong><br>Project Manager<br>KOL Campaign<br><br>
+          <strong>SCOPE</strong><br>Creator coordination<br>Content alignment<br>Timeline
+        </div>
+        <div class="campaign-visual">
+          <div class="visual-main">
+            <div class="visual-label">CAMPAIGN VISUAL</div>
+            <img src="assets/derma-angel-main.jpg" alt="Derma Angel campaign">
+          </div>
+          <div class="visual-side">
+            <div class="visual-side-item"><img src="assets/derma-angel-01.jpg" alt="Derma Angel content"></div>
+            <div class="visual-side-item"><img src="assets/derma-angel-02.jpg" alt="Derma Angel content"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- EDIT: copy salah satu blok <article class="campaign">...</article> di atas kalau mau tambah DPE Lab / VT Cosmetics -->
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="case-study">
+  <div class="container">
+    <div class="section-index">04 / CASE STUDY</div>
+    <h2 class="section-heading">What happens <em>between</em><br>the brief and the post.</h2>
+    <div class="case-layout">
+      <div class="case-card">
+        <h3>The campaign pipeline</h3>
+        <div class="case-step"><div class="case-step-number">01</div><div><h4>Brief</h4><p>Pahami objective, audiens, deliverable, dan prioritas komunikasi.</p></div></div>
+        <div class="case-step"><div class="case-step-number">02</div><div><h4>KOL</h4><p>Cocokkan kebutuhan campaign dengan profil kreator, gaya konten, dan audiens.</p></div></div>
+        <div class="case-step"><div class="case-step-number">03</div><div><h4>Storyline</h4><p>Terjemahkan arahan brand jadi konten yang bisa disampaikan kreator secara natural.</p></div></div>
+        <div class="case-step"><div class="case-step-number">04</div><div><h4>Production</h4><p>Jaga komunikasi dan timeline tetap jalan selagi konten diproduksi.</p></div></div>
+        <div class="case-step"><div class="case-step-number">05</div><div><h4>Review</h4><p>Koordinasikan feedback, revisi, retake, dan alignment dengan client.</p></div></div>
+        <div class="case-step"><div class="case-step-number">06</div><div><h4>LIVE</h4><p>Deliverable final tayang sesuai timeline campaign.</p></div></div>
+      </div>
+      <div class="case-card">
+        <h3>The real work</h3>
+        <p style="font-family:var(--serif); font-size:30px; line-height:1.15; margin-bottom:36px;">"Sebagian besar campaign management itu memastikan orang berikutnya dapat apa yang mereka butuhkan."</p>
+        <div class="case-step"><div class="case-step-number">↗</div><div><h4>Client → KOL</h4><p>Mengubah feedback brand jadi komunikasi yang jelas buat kreator.</p></div></div>
+        <div class="case-step"><div class="case-step-number">↗</div><div><h4>KOL → Client</h4><p>Memastikan output kreator tetap selaras dengan brief.</p></div></div>
+        <div class="case-step"><div class="case-step-number">↗</div><div><h4>Timeline → Reality</h4><p>Menyesuaikan timeline yang bergeser tanpa kehilangan deliverable.</p></div></div>
+        <div class="case-step"><div class="case-step-number">↗</div><div><h4>Feedback → Action</h4><p>Membuat feedback jadi actionable, terlacak, dan mudah diikuti.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT PROOF -->
+<section class="content-proof">
+  <div class="container">
+    <div class="section-index">05 / CONTENT PROOF</div>
+    <h2 class="section-heading">Don't just <em>take my word.</em></h2>
+    <div class="content-grid">
+      <article class="content-card">
+        <div class="content-frame">
+          <div class="content-number">01 / LIVE</div>
+          <video controls poster="assets/kol-poster-01.jpg"><source src="assets/kol-video-01.mp4" type="video/mp4"></video>
+        </div>
+        <div class="content-info"><h3>Konten dokter</h3><span>BLACKMORES</span></div>
+        <a href="#" class="content-link" target="_blank">Lihat konten →</a>
+      </article>
+      <article class="content-card">
+        <div class="content-frame">
+          <div class="content-number">02 / LIVE</div>
+          <img src="assets/kol-content-02.jpg" alt="Celimax KOL content">
+        </div>
+        <div class="content-info"><h3>Campaign kreator</h3><span>CELIMAX</span></div>
+        <a href="#" class="content-link" target="_blank">Lihat konten →</a>
+      </article>
+      <article class="content-card">
+        <div class="content-frame">
+          <div class="content-number">03 / LIVE</div>
+          <img src="assets/kol-content-03.jpg" alt="Gemistry KOL content">
+        </div>
+        <div class="content-info"><h3>Storytelling produk</h3><span>GEMISTRY</span></div>
+        <a href="#" class="content-link" target="_blank">Lihat konten →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF WALL -->
+<section class="proof-wall">
+  <div class="container">
+    <div class="section-index">06 / BEHIND THE SCENES</div>
+    <h2 class="section-heading">The stuff <em>behind</em><br>the pretty post.</h2>
+    <div class="wall-grid">
+      <div class="proof-image proof-a"><img src="assets/proof-brief.jpg" alt="Campaign brief"></div>
+      <div class="proof-image proof-b"><img src="assets/proof-chat.jpg" alt="KOL coordination"></div>
+      <div class="proof-image proof-c"><img src="assets/proof-timeline.jpg" alt="Campaign timeline"></div>
+      <div class="proof-note">Postingan itu cuma bagian yang keliatan.
+        <small>brief / follow-up / revisi / approval / delivery</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="section-index">07 / EXPERIENCE</div>
+    <h2 class="section-heading">Different rooms. <em>Same skill:</em><br>making things happen.</h2>
+    <div class="experience-grid">
+      <div class="experience-row">
+        <div class="experience-date">JAN 2026 — PRESENT</div>
+        <div><div class="experience-role">Project Manager</div>
+          <p class="experience-description">Mengelola workflow campaign kreatif & KOL — briefing, koordinasi kreator, produksi konten, komunikasi client, revisi, sampai delivery.</p></div>
+        <div class="experience-company">ASCEN</div>
+      </div>
+      <div class="experience-row">
+        <div class="experience-date">AUG 2025 — PRESENT</div>
+        <div><div class="experience-role">Training Facilitator</div>
+          <p class="experience-description">Memfasilitasi corporate training, memandu diskusi reflektif, dan menyesuaikan gaya fasilitasi per audiens.</p></div>
+        <div class="experience-company">Peopleshift</div>
+      </div>
+      <div class="experience-row">
+        <div class="experience-date">FEB 2023 — JUN 2025</div>
+        <div><div class="experience-role">Guru BK / School Counselor</div>
+          <p class="experience-description">Mengoordinasikan dukungan siswa, proses sekolah, kegiatan terkait admisi universitas, dan standardisasi perlindungan anak untuk populasi siswa yang besar.</p></div>
+        <div class="experience-company">SMK Mitra Industri</div>
+      </div>
+      <div class="experience-row">
+        <div class="experience-date">APR 2021 — PRESENT</div>
+        <div><div class="experience-role">Peer Counselor</div>
+          <p class="experience-description">Mendukung sesi konseling sebaya dan psikoedukasi dalam komunitas digital.</p></div>
+        <div class="experience-company">Ibunda.id</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container contact-layout">
+    <div class="section-index">08 / CONTACT</div>
+    <h2 class="contact-title">GOT A<br><em>campaign?</em><br><span>LET'S MOVE.</span></h2>
+    <div class="contact-note">
+      <p>Butuh orang yang jagain semua moving parts tetap jalan?</p>
+      <small>I'M HERE →</small>
+    </div>
+    <div class="contact-bottom">
+      <!-- EDIT: ganti email & link di bawah -->
+      <a href="mailto:your@email.com" class="contact-email">your@email.com</a>
+      <div class="contact-links">
+        <a href="#" target="_blank">LinkedIn</a><a href="#" target="_blank">Instagram</a><a href="#" target="_blank">CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Nadaa Zahidah</span>
+  <span>Project Manager × KOL Campaign Specialist</span>
+</footer>
+
+</body>
+</html>
