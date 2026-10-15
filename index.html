@@ -64,7 +64,7 @@ img{
 }
 
 /* =========================
-   GINGHAM & SCALLOP HEADER (MORE SOFT & SUBTLE)
+   GINGHAM & SCALLOP HEADER (SOFT & SUBTLE)
 ========================= */
 
 .gingham-banner{
@@ -233,7 +233,7 @@ img{
 }
 
 /* =========================
-   HERO LOGO SHOWCASE (LARGER LOGOS)
+   HERO LOGO SHOWCASE (LARGER & EXTRA SMOOTH)
 ========================= */
 
 .hero-logo-showcase{
@@ -241,10 +241,10 @@ img{
   background:var(--bg-card);
   border:1px solid var(--line);
   border-radius:20px;
-  padding:32px 20px;
+  padding:36px 0;
   display:flex;
   flex-direction:column;
-  gap:22px;
+  gap:28px;
   overflow:hidden;
 }
 
@@ -254,8 +254,8 @@ img{
   align-items:center;
   padding-bottom:12px;
   border-bottom:1px dashed var(--line);
-  padding-left:12px;
-  padding-right:12px;
+  padding-left:24px;
+  padding-right:24px;
 }
 
 .showcase-title{
@@ -276,49 +276,55 @@ img{
   overflow:hidden;
   position:relative;
   width:100%;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 .logo-track{
   display:flex;
   align-items:center;
-  gap:52px;
+  gap:64px;
   width:max-content;
+  will-change: transform;
 }
 
 .logo-track.track-1{
-  animation:logoMove 25s linear infinite;
+  animation: logoMove 35s linear infinite;
 }
 
 .logo-track.track-2{
-  animation:logoMoveReverse 28s linear infinite;
+  animation: logoMoveReverse 38s linear infinite;
 }
 
-/* UKURAN LOGO DIPERBESAR */
+.logo-track:hover{
+  animation-play-state: paused;
+}
+
 .logo-img{
-  height:72px;
+  height:85px;
   width:auto;
-  max-width:180px;
+  max-width:none;
   object-fit:contain;
   mix-blend-mode:multiply;
   filter:grayscale(10%);
   opacity:0.92;
-  transition:.2s;
+  transition:transform .2s ease, filter .2s ease;
 }
 
 .logo-img:hover{
   filter:grayscale(0%);
   opacity:1;
-  transform:scale(1.08);
+  transform:scale(1.1);
 }
 
 @keyframes logoMove{
-  from{ transform:translateX(0); }
-  to{ transform:translateX(-50%); }
+  0%{ transform: translate3d(0, 0, 0); }
+  100%{ transform: translate3d(-50%, 0, 0); }
 }
 
 @keyframes logoMoveReverse{
-  from{ transform:translateX(-50%); }
-  to{ transform:translateX(0); }
+  0%{ transform: translate3d(-50%, 0, 0); }
+  100%{ transform: translate3d(0, 0, 0); }
 }
 
 /* =========================
@@ -851,7 +857,7 @@ footer{
           I manage the moving parts of KOL campaigns — from planning and briefs to creator coordination, content review, timelines, and reporting.
         </p>
 
-        <!-- LOGO SHOWCASE -->
+        <!-- LOGO SHOWCASE (BIGGER & SEAMLESS) -->
         <div class="hero-logo-showcase">
           <div class="showcase-header">
             <span class="showcase-title">Brands I've Worked With</span>
@@ -902,7 +908,6 @@ footer{
               <img src="assets/npure.jpg" alt="NPURE" class="logo-img">
               <img src="assets/vt-cosmetics.jpg" alt="VT Cosmetics" class="logo-img">
               <img src="assets/lightplus.jpg" alt="Light+ by Wardah" class="logo-img">
-
             </div>
           </div>
         </div>
@@ -1156,7 +1161,7 @@ footer{
 
     <!-- INLINE ARCHIVE -->
     <div class="inline-archive">
-      <div class="inline-archive-title">Full Brand Collaboration Portfolio</div>
+      <div class="inline-archive-title">Other Brand Collaboration</div>
       <div class="brand-text-list">
         <span class="brand-tag">Derma Angel</span>
         <span class="brand-tag">Nourish Skin</span>
