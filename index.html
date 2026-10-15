@@ -8,22 +8,25 @@
 <meta name="description" content="Nada Zahidah — Project Manager × KOL Campaign Specialist" />
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root{
-  --bg-main:#faf8f5;
+  --bg-main:#fffaf5;
   --bg-card:#ffffff;
-  --bg-dark:#171717;
+  --bg-pink:#fde8ef;
+  --bg-dark:#211718;
   
-  --ink:#171717;
-  --muted:#525252;
-  --line:#e8e5e0;
+  --ink:#211718;
+  --muted:#635356;
+  --line:#ebdcd5;
   
-  --burgundy:#7a1c3d;
-  --burgundy-light:#f5e8ed;
+  --burgundy:#801b38;
+  --burgundy-light:#f9dbe4;
+  --red-accent:#e04868;
   --white:#ffffff;
 
-  --font-main:"Plus Jakarta Sans", sans-serif;
+  --font-serif:"Playfair Display", serif;
+  --font-sans:"Plus Jakarta Sans", sans-serif;
 }
 
 *{
@@ -39,7 +42,7 @@ html{
 body{
   background-color:var(--bg-main);
   color:var(--ink);
-  font-family:var(--font-main);
+  font-family:var(--font-sans);
   font-size:16px;
   line-height:1.6;
   overflow-x:hidden;
@@ -61,6 +64,30 @@ img{
 }
 
 /* =========================
+   GINGHAM & SCALLOP HEADER
+========================= */
+
+.gingham-banner{
+  background-color: #fca5bb;
+  background-image: 
+    linear-gradient(90deg, rgba(224,72,104,0.3) 50%, transparent 50%),
+    linear-gradient(rgba(224,72,104,0.3) 50%, transparent 50%);
+  background-size: 24px 24px;
+  padding-top:72px;
+  position:relative;
+}
+
+.scallop-edge{
+  width:100%;
+  height:18px;
+  background-image: radial-gradient(circle at 10px -5px, transparent 12px, #fffaf5 13px);
+  background-size: 20px 20px;
+  background-repeat: repeat-x;
+  position:relative;
+  bottom:-1px;
+}
+
+/* =========================
    NAV
 ========================= */
 
@@ -74,16 +101,17 @@ img{
   justify-content:space-between;
   align-items:center;
   padding:0 5vw;
-  background:rgba(250,248,245,.92);
+  background:rgba(255,250,245,.95);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);
   z-index:100;
 }
 
 .nav-logo{
-  font-size:18px;
+  font-family:var(--font-serif);
+  font-size:22px;
   font-weight:800;
-  letter-spacing:-.02em;
+  letter-spacing:-.01em;
 }
 
 .nav-logo span{
@@ -109,8 +137,9 @@ img{
 .nav-cta{
   background:var(--burgundy);
   color:var(--white) !important;
-  padding:8px 20px;
+  padding:8px 22px;
   border-radius:100px;
+  box-shadow:0 4px 12px rgba(128,27,56,0.2);
 }
 
 /* =========================
@@ -118,7 +147,6 @@ img{
 ========================= */
 
 .ticker{
-  margin-top:72px;
   overflow:hidden;
   background:var(--burgundy);
   color:var(--white);
@@ -136,14 +164,14 @@ img{
   font-size:12px;
   font-weight:700;
   text-transform:uppercase;
-  letter-spacing:.1em;
+  letter-spacing:.12em;
   white-space:nowrap;
 }
 
 .ticker-item::after{
-  content:"•";
+  content:"🍒";
   margin-left:40px;
-  opacity:0.6;
+  font-size:10px;
 }
 
 @keyframes ticker{
@@ -155,36 +183,45 @@ img{
    HERO
 ========================= */
 
-.hero{
-  padding:80px 0 60px;
+.hero-wrapper{
+  padding:40px 0 60px;
+}
+
+.hero-card{
+  background:var(--bg-card);
+  border:2px solid var(--burgundy);
+  border-radius:28px;
+  padding:60px 40px;
   text-align:center;
+  box-shadow: 0 12px 32px rgba(128,27,56,0.08);
 }
 
 .hero-kicker{
   display:inline-flex;
   align-items:center;
-  font-size:13px;
+  font-size:12px;
   margin-bottom:20px;
   text-transform:uppercase;
-  letter-spacing:.06em;
+  letter-spacing:.08em;
   color:var(--burgundy);
-  font-weight:700;
+  font-weight:800;
   background:var(--burgundy-light);
-  padding:6px 18px;
+  padding:6px 20px;
   border-radius:100px;
+  border:1px dashed var(--burgundy);
 }
 
 .hero-title{
-  font-size:clamp(40px,6vw,76px);
-  line-height:1.08;
-  letter-spacing:-.03em;
-  font-weight:800;
-  max-width:900px;
+  font-family:var(--font-serif);
+  font-size:clamp(42px,6.5vw,78px);
+  line-height:1.1;
+  font-weight:700;
+  max-width:880px;
   margin:0 auto;
 }
 
 .hero-title em{
-  font-style:normal;
+  font-style:italic;
   color:var(--burgundy);
 }
 
@@ -200,14 +237,14 @@ img{
 ========================= */
 
 .hero-logo-showcase{
-  margin-top:48px;
+  margin-top:40px;
   background:var(--bg-card);
   border:1px solid var(--line);
   border-radius:20px;
-  padding:32px 20px;
+  padding:28px 20px;
   display:flex;
   flex-direction:column;
-  gap:20px;
+  gap:18px;
   overflow:hidden;
 }
 
@@ -216,23 +253,23 @@ img{
   justify-content:space-between;
   align-items:center;
   padding-bottom:12px;
-  border-bottom:1px solid var(--line);
+  border-bottom:1px dashed var(--line);
   padding-left:12px;
   padding-right:12px;
 }
 
 .showcase-title{
-  font-size:13px;
-  font-weight:700;
+  font-size:12px;
+  font-weight:800;
   text-transform:uppercase;
-  letter-spacing:.05em;
+  letter-spacing:.06em;
   color:var(--burgundy);
 }
 
 .showcase-badge{
   font-size:13px;
   color:var(--muted);
-  font-weight:500;
+  font-weight:600;
 }
 
 .logo-row{
@@ -257,12 +294,12 @@ img{
 }
 
 .logo-img{
-  height:58px;
+  height:56px;
   width:auto;
   max-width:150px;
   object-fit:contain;
   mix-blend-mode:multiply;
-  filter:grayscale(20%);
+  filter:grayscale(15%);
   opacity:0.9;
   transition:.2s;
 }
@@ -270,7 +307,7 @@ img{
 .logo-img:hover{
   filter:grayscale(0%);
   opacity:1;
-  transform:scale(1.05);
+  transform:scale(1.06);
 }
 
 @keyframes logoMove{
@@ -293,23 +330,23 @@ section{
 }
 
 .section-index{
-  font-size:13px;
+  font-size:12px;
   color:var(--burgundy);
-  margin-bottom:12px;
-  font-weight:700;
-  letter-spacing:.05em;
+  margin-bottom:10px;
+  font-weight:800;
+  letter-spacing:.08em;
   text-transform:uppercase;
 }
 
 .section-heading{
-  font-size:clamp(28px,3.5vw,44px);
+  font-family:var(--font-serif);
+  font-size:clamp(32px,4vw,48px);
   line-height:1.15;
-  letter-spacing:-.02em;
-  font-weight:800;
+  font-weight:700;
 }
 
 .section-heading em{
-  font-style:normal;
+  font-style:italic;
   color:var(--burgundy);
 }
 
@@ -327,14 +364,16 @@ section{
 .proof-item{
   background:var(--bg-card);
   padding:28px 20px;
-  border-radius:16px;
+  border-radius:20px;
   border:1px solid var(--line);
   text-align:center;
+  box-shadow:0 4px 16px rgba(128,27,56,0.03);
 }
 
 .proof-number{
-  font-size:38px;
-  font-weight:800;
+  font-family:var(--font-serif);
+  font-size:42px;
+  font-weight:700;
   line-height:1;
   color:var(--burgundy);
 }
@@ -350,6 +389,10 @@ section{
    CAPABILITIES / SCOPE
 ========================= */
 
+.capability-section{
+  background:var(--bg-pink);
+}
+
 .capability-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -360,26 +403,27 @@ section{
 .capability{
   background:var(--bg-card);
   padding:28px;
-  border:1px solid var(--line);
-  border-radius:16px;
+  border:1px solid rgba(128,27,56,0.15);
+  border-radius:20px;
   transition:.2s;
 }
 
 .capability:hover{
   border-color:var(--burgundy);
-  transform:translateY(-2px);
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(128,27,56,0.08);
 }
 
 .capability-number{
-  font-size:13px;
+  font-size:12px;
   color:var(--burgundy);
-  font-weight:700;
+  font-weight:800;
 }
 
 .capability h3{
   font-size:18px;
   font-weight:700;
-  margin-top:12px;
+  margin-top:10px;
   margin-bottom:6px;
 }
 
@@ -395,9 +439,10 @@ section{
 .case-study{
   margin-top:40px;
   background:var(--bg-card);
-  border:1px solid var(--line);
-  border-radius:20px;
+  border:2px solid var(--burgundy);
+  border-radius:24px;
   padding:36px;
+  box-shadow:0 8px 24px rgba(128,27,56,0.05);
 }
 
 .case-header{
@@ -405,15 +450,15 @@ section{
   justify-content:space-between;
   align-items:flex-start;
   padding-bottom:20px;
-  border-bottom:1px solid var(--line);
+  border-bottom:1px dashed var(--line);
   flex-wrap:wrap;
   gap:16px;
 }
 
 .case-title{
-  font-size:clamp(28px,3.5vw,42px);
-  font-weight:800;
-  letter-spacing:-.02em;
+  font-family:var(--font-serif);
+  font-size:clamp(32px,4vw,44px);
+  font-weight:700;
 }
 
 .case-link{
@@ -441,32 +486,44 @@ section{
 
 .embed-list-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
   gap:16px;
 }
 
 .embed-card{
   background:var(--bg-main);
   border:1px solid var(--line);
-  border-radius:16px;
-  padding:12px;
+  border-radius:18px;
+  overflow:hidden;
+  min-height:380px;
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;
 }
 
 .embed-card iframe{
   width:100%;
   height:100%;
-  min-height:400px;
+  min-height:380px;
   border:none;
 }
 
-.tiktok-embed-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-  gap:16px;
+.tiktok-link-card{
+  width:100%;
+  background:var(--bg-main);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  transition:.2s;
+}
+
+.tiktok-link-card:hover{
+  border-color:var(--burgundy);
+  background:var(--burgundy-light);
+  transform:translateY(-2px);
 }
 
 .case-content{
@@ -479,7 +536,7 @@ section{
   padding:18px;
   background:var(--bg-main);
   border:1px solid var(--line);
-  border-radius:12px;
+  border-radius:14px;
 }
 
 .case-block h4{
@@ -487,7 +544,7 @@ section{
   text-transform:uppercase;
   color:var(--burgundy);
   margin-bottom:6px;
-  font-weight:700;
+  font-weight:800;
   letter-spacing:.05em;
 }
 
@@ -503,12 +560,13 @@ section{
 }
 
 .case-role-list span{
-  border:1px solid var(--line);
-  background:var(--bg-card);
+  border:1px solid var(--burgundy);
+  background:var(--burgundy-light);
+  color:var(--burgundy);
   border-radius:100px;
   padding:4px 12px;
   font-size:12px;
-  font-weight:600;
+  font-weight:700;
 }
 
 /* =========================
@@ -524,7 +582,7 @@ section{
 .kol-item{
   background:var(--bg-card);
   border:1px solid var(--line);
-  border-radius:16px;
+  border-radius:18px;
   padding:24px 28px;
   display:grid;
   grid-template-columns:40px 1fr 240px;
@@ -535,7 +593,7 @@ section{
 .kol-number{
   font-size:14px;
   color:var(--burgundy);
-  font-weight:700;
+  font-weight:800;
 }
 
 .kol-item h3{
@@ -567,20 +625,21 @@ section{
   color:var(--muted);
   background:var(--bg-main);
   padding:12px 16px;
-  border-radius:10px;
+  border-radius:12px;
+  border:1px solid var(--line);
 }
 
 .inline-archive{
   margin-top:40px;
   background:var(--bg-card);
   border:1px solid var(--line);
-  border-radius:16px;
+  border-radius:18px;
   padding:28px;
 }
 
 .inline-archive-title{
   font-size:13px;
-  font-weight:700;
+  font-weight:800;
   text-transform:uppercase;
   color:var(--burgundy);
   margin-bottom:14px;
@@ -616,14 +675,14 @@ section{
 .how-item{
   background:var(--bg-card);
   border:1px solid var(--line);
-  border-radius:14px;
+  border-radius:16px;
   padding:20px;
 }
 
 .how-number{
   font-size:13px;
   color:var(--burgundy);
-  font-weight:700;
+  font-weight:800;
   margin-bottom:8px;
 }
 
@@ -645,7 +704,7 @@ section{
 .experience{
   background:var(--bg-dark);
   color:var(--white);
-  border-radius:24px;
+  border-radius:28px;
   margin:40px 0;
 }
 
@@ -662,12 +721,12 @@ section{
   grid-template-columns:150px 1fr 180px;
   gap:24px;
   padding:24px 0;
-  border-top:1px solid #2a2a2a;
+  border-top:1px solid #3d2c2e;
 }
 
 .experience-date{
   font-size:13px;
-  color:#888;
+  color:#a89799;
 }
 
 .experience-role{
@@ -677,13 +736,13 @@ section{
 
 .experience-description{
   margin-top:6px;
-  color:#aaa;
+  color:#d4c5c7;
   font-size:14px;
 }
 
 .experience-company{
   font-size:13px;
-  color:#888;
+  color:#a89799;
   text-align:right;
   text-transform:uppercase;
   font-weight:700;
@@ -699,15 +758,15 @@ section{
 }
 
 .contact-title{
+  font-family:var(--font-serif);
   font-size:clamp(40px,7vw,84px);
   line-height:.95;
-  font-weight:800;
-  letter-spacing:-.03em;
+  font-weight:700;
 }
 
 .contact-title em{
   color:var(--burgundy);
-  font-style:normal;
+  font-style:italic;
 }
 
 .contact-email{
@@ -719,6 +778,7 @@ section{
   background:var(--burgundy-light);
   padding:10px 28px;
   border-radius:100px;
+  border:1px dashed var(--burgundy);
 }
 
 .contact-links{
@@ -767,79 +827,90 @@ footer{
   </div>
 </nav>
 
-<!-- TICKER TOP -->
-<div class="ticker">
-  <div class="ticker-track">
-    <span class="ticker-item">PROJECT MANAGER</span>
-    <span class="ticker-item">KOL CAMPAIGN SPECIALIST</span>
-    <span class="ticker-item">CAMPAIGN EXECUTION</span>
-    <span class="ticker-item">PROJECT MANAGER</span>
-    <span class="ticker-item">KOL CAMPAIGN SPECIALIST</span>
+<!-- GINGHAM TOP BANNER -->
+<div class="gingham-banner">
+  <!-- TICKER TOP -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">PROJECT MANAGER</span>
+      <span class="ticker-item">KOL CAMPAIGN SPECIALIST</span>
+      <span class="ticker-item">CAMPAIGN EXECUTION</span>
+      <span class="ticker-item">PROJECT MANAGER</span>
+      <span class="ticker-item">KOL CAMPAIGN SPECIALIST</span>
+    </div>
   </div>
-</div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-kicker">Project Manager × KOL Campaign Specialist</div>
-    <h1 class="hero-title">I make <em>campaigns</em> move.</h1>
-    <p class="hero-description">
-      I manage the moving parts of KOL campaigns — from planning and briefs to creator coordination, content review, timelines, and reporting.
-    </p>
+  <!-- HERO INSIDE BANNER CARD -->
+  <div class="hero-wrapper">
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-kicker">Project Manager × KOL Campaign Specialist</div>
+        <h1 class="hero-title">I make <em>campaigns</em> move.</h1>
+        <p class="hero-description">
+          I manage the moving parts of KOL campaigns — from planning and briefs to creator coordination, content review, timelines, and reporting.
+        </p>
 
-    <!-- LOGO SHOWCASE -->
-    <div class="hero-logo-showcase">
-      <div class="showcase-header">
-        <span class="showcase-title">Brands I've Worked With</span>
-        <span class="showcase-badge">Beauty & Lifestyle</span>
-      </div>
-      
-      <!-- Row 1 -->
-      <div class="logo-row">
-        <div class="logo-track track-1">
-          <img src="assets/blackmores.jpg" alt="Blackmores" class="logo-img">
-          <img src="assets/celimax.jpg" alt="Celimax" class="logo-img">
-          <img src="assets/dermaangel.jpg" alt="Derma Angel" class="logo-img">
-          <img src="assets/dpe-lab.jpg" alt="DPE Lab" class="logo-img">
-          <img src="assets/fino.jpg" alt="Fino" class="logo-img">
-          <img src="assets/gemistry.jpg" alt="Gemistry" class="logo-img">
-          <img src="assets/holika-holika.jpg" alt="Holika Holika" class="logo-img">
-          <img src="assets/kka-kong.jpg" alt="Kka Kkoong" class="logo-img">
-          <!-- Duplicate -->
-          <img src="assets/blackmores.jpg" alt="Blackmores" class="logo-img">
-          <img src="assets/celimax.jpg" alt="Celimax" class="logo-img">
-          <img src="assets/dermaangel.jpg" alt="Derma Angel" class="logo-img">
-          <img src="assets/dpe-lab.jpg" alt="DPE Lab" class="logo-img">
-          <img src="assets/fino.jpg" alt="Fino" class="logo-img">
-          <img src="assets/gemistry.jpg" alt="Gemistry" class="logo-img">
-          <img src="assets/holika-holika.jpg" alt="Holika Holika" class="logo-img">
-          <img src="assets/kka-kong.jpg" alt="Kka Kkoong" class="logo-img">
-        </div>
-      </div>
+        <!-- LOGO SHOWCASE -->
+        <div class="hero-logo-showcase">
+          <div class="showcase-header">
+            <span class="showcase-title">Brands I've Worked With</span>
+            <span class="showcase-badge">Beauty & Lifestyle</span>
+          </div>
+          
+          <!-- Row 1 -->
+          <div class="logo-row">
+            <div class="logo-track track-1">
+              <img src="assets/blackmores.jpg" alt="Blackmores" class="logo-img">
+              <img src="assets/celimax.jpg" alt="Celimax" class="logo-img">
+              <img src="assets/dermaangel.jpg" alt="Derma Angel" class="logo-img">
+              <img src="assets/dpe-lab.jpg" alt="DPE Lab" class="logo-img">
+              <img src="assets/fino.jpg" alt="Fino" class="logo-img">
+              <img src="assets/gemistry.jpg" alt="Gemistry" class="logo-img">
+              <img src="assets/holika-holika.jpg" alt="Holika Holika" class="logo-img">
+              <img src="assets/kka-kong.jpg" alt="Kka Kkoong" class="logo-img">
+              <!-- Duplicate -->
+              <img src="assets/blackmores.jpg" alt="Blackmores" class="logo-img">
+              <img src="assets/celimax.jpg" alt="Celimax" class="logo-img">
+              <img src="assets/dermaangel.jpg" alt="Derma Angel" class="logo-img">
+              <img src="assets/dpe-lab.jpg" alt="DPE Lab" class="logo-img">
+              <img src="assets/fino.jpg" alt="Fino" class="logo-img">
+              <img src="assets/gemistry.jpg" alt="Gemistry" class="logo-img">
+              <img src="assets/holika-holika.jpg" alt="Holika Holika" class="logo-img">
+              <img src="assets/kka-kong.jpg" alt="Kka Kkoong" class="logo-img">
+            </div>
+          </div>
 
-      <!-- Row 2 -->
-      <div class="logo-row">
-        <div class="logo-track track-2">
-          <img src="assets/lucido-l.jpg" alt="Lucido-L" class="logo-img">
-          <img src="assets/marina.jpg" alt="Marina" class="logo-img">
-          <img src="assets/my-baby.jpg" alt="My Baby" class="logo-img">
-          <img src="assets/natur-e.jpg" alt="Natur-E" class="logo-img">
-          <img src="assets/nourish-skin.jpg" alt="Nourish Skin" class="logo-img">
-          <img src="assets/npure.jpg" alt="NPURE" class="logo-img">
-          <img src="assets/vt-cosmetics.jpg" alt="VT Cosmetics" class="logo-img">
-          <!-- Duplicate -->
-          <img src="assets/lucido-l.jpg" alt="Lucido-L" class="logo-img">
-          <img src="assets/marina.jpg" alt="Marina" class="logo-img">
-          <img src="assets/my-baby.jpg" alt="My Baby" class="logo-img">
-          <img src="assets/natur-e.jpg" alt="Natur-E" class="logo-img">
-          <img src="assets/nourish-skin.jpg" alt="Nourish Skin" class="logo-img">
-          <img src="assets/npure.jpg" alt="NPURE" class="logo-img">
-          <img src="assets/vt-cosmetics.jpg" alt="VT Cosmetics" class="logo-img">
+          <!-- Row 2 -->
+          <div class="logo-row">
+            <div class="logo-track track-2">
+              <img src="assets/lucido-l.jpg" alt="Lucido-L" class="logo-img">
+              <img src="assets/marina.jpg" alt="Marina" class="logo-img">
+              <img src="assets/my-baby.jpg" alt="My Baby" class="logo-img">
+              <img src="assets/natur-e.jpg" alt="Natur-E" class="logo-img">
+              <img src="assets/nourish-skin.jpg" alt="Nourish Skin" class="logo-img">
+              <img src="assets/npure.jpg" alt="NPURE" class="logo-img">
+              <img src="assets/vt-cosmetics.jpg" alt="VT Cosmetics" class="logo-img">
+              <img src="assets/lightplus.jpg" alt="Light+ by Wardah" class="logo-img">
+    
+              <!-- Duplicate -->
+              <img src="assets/lucido-l.jpg" alt="Lucido-L" class="logo-img">
+              <img src="assets/marina.jpg" alt="Marina" class="logo-img">
+              <img src="assets/my-baby.jpg" alt="My Baby" class="logo-img">
+              <img src="assets/natur-e.jpg" alt="Natur-E" class="logo-img">
+              <img src="assets/nourish-skin.jpg" alt="Nourish Skin" class="logo-img">
+              <img src="assets/npure.jpg" alt="NPURE" class="logo-img">
+              <img src="assets/vt-cosmetics.jpg" alt="VT Cosmetics" class="logo-img">
+              <img src="assets/lightplus.jpg" alt="Light+ by Wardah" class="logo-img">
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+  
+  <div class="scallop-edge"></div>
+</div>
 
 <!-- PROOF -->
 <section class="proof">
@@ -857,19 +928,19 @@ footer{
         <div class="proof-label">From Planning to Execution</div>
       </div>
       <div class="proof-item">
-        <div class="proof-number">KOL</div>
-        <div class="proof-label">Beauty & Lifestyle Focus</div>
+        <div class="proof-number">100+ KOL</div>
+        <div class="proof-label">Campaign Execution Across Beauty & Lifestyle</div>
       </div>
       <div class="proof-item">
-        <div class="proof-number">100%</div>
-        <div class="proof-label">Deliverable Tracking</div>
+        <div class="proof-number">∞</div>
+        <div class="proof-label">Follow up & Revision round</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SCOPE -->
-<section id="what-i-do">
+<section id="what-i-do" class="capability-section">
   <div class="container">
     <div class="section-index">02 / SCOPE</div>
     <h2 class="section-heading">What I work on</h2>
@@ -928,7 +999,7 @@ footer{
       </div>
 
       <div class="case-grid two-col">
-        <!-- 3 INSTAGRAM EMBEDS -->
+        <!-- 4 INSTAGRAM EMBEDS -->
         <div class="embed-list-grid">
           <div class="embed-card">
             <iframe src="https://www.instagram.com/p/DV-VSXuicQA/embed" frameborder="0" scrolling="no"></iframe>
@@ -938,6 +1009,9 @@ footer{
           </div>
           <div class="embed-card">
             <iframe src="https://www.instagram.com/p/DX_iAj_vM3C/embed" frameborder="0" scrolling="no"></iframe>
+          </div>
+          <div class="embed-card">
+            <iframe src="https://www.instagram.com/p/DWByiTOkhmb/embed" frameborder="0" scrolling="no"></iframe>
           </div>
         </div>
 
@@ -971,27 +1045,50 @@ footer{
         </div>
       </div>
 
-      <div class="case-grid">
-        <!-- TIKTOK EMBEDS RESMI -->
-        <div class="tiktok-embed-grid">
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@jemimalivia/video/7683511070916447508" data-video-id="7683511070916447508" style="max-width: 100%; min-width: 280px;" >
-            <section> <a target="_blank" title="@jemimalivia" href="https://www.tiktok.com/@jemimalivia?refer=embed">@jemimalivia</a> </section>
-          </blockquote>
+      <div class="case-grid two-col" style="margin-top:24px;">
+        <!-- TIKTOK LINK CARDS GRID -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px;">
+          
+          <!-- Card 1 -->
+          <a href="https://www.tiktok.com/@jemimalivia/video/7683511070916447508" target="_blank" class="tiktok-link-card">
+            <div>
+              <span style="font-size:11px; font-weight:800; color:var(--burgundy); text-transform:uppercase; letter-spacing:.05em;">TikTok Campaign</span>
+              <strong style="font-size:15px; display:block; color:var(--ink); margin-top:4px;">@jemimalivia ↗</strong>
+              <p style="font-size:13px; color:var(--muted); margin-top:4px;">Slow aging is basically my new skincare mindset ✨</p>
+            </div>
+          </a>
 
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@vivioctalia/video/7677864561864740117" data-video-id="7677864561864740117" style="max-width: 100%; min-width: 280px;" >
-            <section> <a target="_blank" title="@vivioctalia" href="https://www.tiktok.com/@vivioctalia?refer=embed">@vivioctalia</a> </section>
-          </blockquote>
+          <!-- Card 2 -->
+          <a href="https://www.tiktok.com/@vivioctalia/video/7677864561864740117" target="_blank" class="tiktok-link-card">
+            <div>
+              <span style="font-size:11px; font-weight:800; color:var(--burgundy); text-transform:uppercase; letter-spacing:.05em;">TikTok Campaign</span>
+              <strong style="font-size:15px; display:block; color:var(--ink); margin-top:4px;">@vivioctalia ↗</strong>
+              <p style="font-size:13px; color:var(--muted); margin-top:4px;">Slow aging ala orang Korea ✨👀</p>
+            </div>
+          </a>
 
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@dok.jenni/video/7673157304879025426" data-video-id="7673157304879025426" style="max-width: 100%; min-width: 280px;" >
-            <section> <a target="_blank" title="@dok.jenni" href="https://www.tiktok.com/@dok.jenni?refer=embed">@dok.jenni</a> </section>
-          </blockquote>
+          <!-- Card 3 -->
+          <a href="https://www.tiktok.com/@dok.jenni/video/7673157304879025426" target="_blank" class="tiktok-link-card">
+            <div>
+              <span style="font-size:11px; font-weight:800; color:var(--burgundy); text-transform:uppercase; letter-spacing:.05em;">TikTok Campaign</span>
+              <strong style="font-size:15px; display:block; color:var(--ink); margin-top:4px;">@dok.jenni ↗</strong>
+              <p style="font-size:13px; color:var(--muted); margin-top:4px;">Doctor-led slow aging education & product breakdown</p>
+            </div>
+          </a>
 
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tiarashafiya/video/7682745314347961620" data-video-id="7682745314347961620" style="max-width: 100%; min-width: 280px;" >
-            <section> <a target="_blank" title="@tiarashafiya" href="https://www.tiktok.com/@tiarashafiya?refer=embed">@tiarashafiya</a> </section>
-          </blockquote>
+          <!-- Card 4 -->
+          <a href="https://www.tiktok.com/@tiarashafiya/video/7682745314347961620" target="_blank" class="tiktok-link-card">
+            <div>
+              <span style="font-size:11px; font-weight:800; color:var(--burgundy); text-transform:uppercase; letter-spacing:.05em;">TikTok Campaign</span>
+              <strong style="font-size:15px; display:block; color:var(--ink); margin-top:4px;">@tiarashafiya ↗</strong>
+              <p style="font-size:13px; color:var(--muted); margin-top:4px;">Investasi kulit dari sekarang sebelum tanda penuaan muncul ✨</p>
+            </div>
+          </a>
+
         </div>
 
-        <div class="case-content" style="margin-top:20px;">
+        <!-- DETAIL CAMPAIGN -->
+        <div class="case-content">
           <div class="case-block">
             <h4>The Campaign</h4>
             <p>A mass skincare campaign focused on slow-aging education and broad audience engagement.</p>
@@ -1076,6 +1173,7 @@ footer{
         <span class="brand-tag">Gemistry</span>
         <span class="brand-tag">Natur-E</span>
         <span class="brand-tag">Senka</span>
+        <span class="brand-tag">Light+ by Wardah</span>
       </div>
     </div>
   </div>
@@ -1174,9 +1272,6 @@ footer{
   <div>PROJECT MANAGER × KOL CAMPAIGN SPECIALIST</div>
   <div>© 2026</div>
 </footer>
-
-<!-- TIKTOK ASYNC EMBED SCRIPT -->
-<script async src="https://www.tiktok.com/embed.js"></script>
 
 </body>
 </html>
